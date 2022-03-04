@@ -1,6 +1,5 @@
 import os
 import telebot
-import time
 from telebot import types
 
 imageSelect = types.ReplyKeyboardMarkup(one_time_keyboard=True)

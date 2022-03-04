@@ -2,8 +2,6 @@ import os
 import telebot
 from telebot import types
 
-imageSelect = types.ReplyKeyboardMarkup(one_time_keyboard=True)
-imageSelect.add('Mickey', 'Minnie')
 hideBoard = types.ReplyKeyboardRemove()
 
 API_KEY = os.getenv('API_KEY')

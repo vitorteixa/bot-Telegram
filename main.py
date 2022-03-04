@@ -1,6 +1,5 @@
 import os
 import telebot
-import time
 from telebot import types
 
 imageSelect = types.ReplyKeyboardMarkup(one_time_keyboard=True)
@@ -11,7 +10,7 @@ API_KEY = os.getenv('API_KEY')
 bot = telebot.TeleBot(API_KEY)
 
 @bot.message_handler(commands=['xama'])
-def msg(message):
+def xama(message):
     cid = message.chat.id
     bot.send_audio(cid,open('xama.ogg','rb'), reply_markup=hideBoard)
     bot.send_message(cid,"FAÇA O PRÉ-SAVE:"
@@ -21,9 +20,14 @@ def msg(message):
     bot.send_video(cid, open('toque_de_recolher.mp4', 'rb'), reply_markup=hideBoard)
     
 @bot.message_handler(commands=['netflix'])
-def msg(message):
+def netflix(message):
     cid = message.chat.id
     bot.reply_to(message,"Explicação do termo netflix")
     bot.send_audio(cid,open('porqueNetflix.flac','rb'), reply_markup=hideBoard)
-    
+  
+@bot.message_handler(commands=['wallpaperds'])  
+def wlpp(message):
+    cid = message.chat.id
+    bot.send_photo(cid,open('quartomaisorganizadodeSolutions.png','rb'), reply_markup=hideBoard)
+  
 bot.polling()
